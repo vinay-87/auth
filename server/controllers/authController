@@ -1,0 +1,16 @@
+const User = require('../models/User');
+
+exports.login = async (req, res) => {
+    const { username, password } = req.body;
+    try {
+        const user = await User.findOne({ username, password });
+        if (user) {
+            res.redirect('/dashboard');
+        } else {
+            res.send('Invalid username or password');
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Internal Server Error');
+    }
+};
