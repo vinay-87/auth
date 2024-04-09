@@ -1,14 +1,20 @@
-function validateForm() {
-    var username = document.getElementById("username").value;
-    var password = document.getElementById("password").value;
-    var error = document.getElementById("error");
+document.getElementById("form").addEventListener("submit", function(event) {
+    event.preventDefault();
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+    const error= document.getElementById("error");
 
-    if (username.trim() === "" || password.trim() === "") {
+    if (username === "" || password === "") {
         error.textContent = "Username and password are required.";
-        return false;
-    } else if (password.length < 6) {
-        error.textContent = "Password must be at least 6 characters.";
-        return false;
+        return;
     }
-    return true;
-}
+ 
+    if (password.length < 8) {
+        error.textContent = "Password must be at least 8 characters long.";
+        return; 
+    }
+
+    // Clear any previous error message
+    error.textContent = "";
+    this.submit();
+});
