@@ -1,19 +1,20 @@
 {
-  "name": "auth",
-  "version": "1.0.0",
-  "description": "",
-  "main": "script.js",
-  "scripts": {
-    "start": "nodemon server/server.js"
-  },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.20.2",
+    "bcrypt": "^5.1.1",
     "express": "^4.19.2",
+    "hbs": "^4.2.0",
     "mongoose": "^8.3.0"
   },
   "devDependencies": {
     "nodemon": "^3.1.0"
-  }
+  },
+  "name": "080424-login",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon src/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }
